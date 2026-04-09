@@ -41,6 +41,7 @@ function initializeDatabase() {
   cleanupDuplicateHistoryEntries();
   seedCompanyDepartments();
   cleanupMockData();
+  seedMockData();
   migrateKbIssueReports();
   migrateKbNotificationsClearedAt();
 
@@ -283,6 +284,62 @@ function seedIfEmpty() {
     insertUser.run(...user);
   }
 
+}
+
+/**
+ * Seed mock data for README screenshots (runs once)
+ */
+function seedMockData() {
+  // Check if already seeded
+  const seeded = db.prepare("SELECT seed_key FROM seed_metadata WHERE seed_key = 'mock_data_v1'").get();
+  if (seeded) return;
+
+  // Get owner user ID
+  const owner = db.prepare("SELECT id FROM users WHERE role = 'owner' LIMIT 1").get();
+  if (!owner) return;
+  const createdBy = owner.id;
+
+  console.log('[DB] Seeding mock data for screenshots...');
+
+  // Insert 5 End Users
+  const insertEndUser = db.prepare(`
+    INSERT OR IGNORE INTO end_users (id, full_name, email, phone, department, location, employee_id, notes, is_active, created_by)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  const endUsers = [
+    ['eu-mock-001', 'Sarah Mitchell', 's.mitchell@company.com', '+1 555-0101', 'Marketing', 'Floor 2, Building A', 'EMP-1001', 'Marketing Manager', 1],
+    ['eu-mock-002', 'James Holloway', 'j.holloway@company.com', '+1 555-0102', 'IT Infrastructure', 'Floor 1, Server Room', 'EMP-1002', 'Senior Network Engineer', 1],
+    ['eu-mock-003', 'Layla Al-Hassan', 'l.alhassan@company.com', '+1 555-0103', 'HR', 'Floor 3, Building B', 'EMP-1003', 'HR Coordinator', 1],
+    ['eu-mock-004', 'David Chen', 'd.chen@company.com', '+1 555-0104', 'Operations', 'Floor 3, Building A', 'EMP-1004', 'Operations Lead', 1],
+    ['eu-mock-005', 'Emma Thornton', 'e.thornton@company.com', '+1 555-0105', 'Finance', 'Floor 4, Building A', 'EMP-1005', 'Financial Analyst', 1],
+  ];
+
+  for (const user of endUsers) {
+    insertEndUser.run(...user, createdBy);
+  }
+
+  // Insert 5 Incidents
+  const insertIncident = db.prepare(`
+    INSERT OR IGNORE INTO incidents (id, title, description, priority, status, department, created_by, incident_type, tags)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  const incidents = [
+    ['INC-2851', 'VPN connection dropping every 30 minutes for remote team', 'Multiple remote employees are reporting that their VPN connections are dropping approximately every 30 minutes. This is affecting productivity for the entire remote workforce. The issue started after the latest firewall update on Monday.', 'critical', 'in_progress', 'it-ops', createdBy, 'Network', 'vpn,remote,connectivity'],
+    ['INC-2852', 'Email client not syncing on Outlook 2021 after Windows update', 'After the recent Windows 11 update (KB5034441), Outlook 2021 is no longer syncing emails automatically. Users have to manually click Send/Receive. Approximately 15 users affected across multiple departments.', 'high', 'new', 'helpdesk', createdBy, 'Software', 'outlook,email,windows-update'],
+    ['INC-2853', 'Printer on Floor 3 offline — urgent before board meeting', 'The HP LaserJet Pro on Floor 3 (Conference Room B) is showing offline status. Board meeting scheduled for 2 PM today requires printed materials. Printer was working yesterday evening.', 'high', 'escalated', 'helpdesk', createdBy, 'Hardware', 'printer,hardware,urgent'],
+    ['INC-2854', 'Request: Install Adobe Acrobat Pro on Marketing workstations', 'Marketing department has requested Adobe Acrobat Pro installation on 5 workstations for the new design team. License keys have been procured and approved by IT procurement.', 'medium', 'resolved', 'helpdesk', createdBy, 'Request', 'software-install,adobe,marketing'],
+    ['INC-2855', 'Password reset required for new hire onboarding', 'New employee John Martinez (starting Monday) needs Active Directory account created and initial password set. HR has completed all paperwork. Employee will be joining the Finance department.', 'low', 'closed', 'helpdesk', createdBy, 'Request', 'onboarding,password,new-hire'],
+  ];
+
+  for (const inc of incidents) {
+    insertIncident.run(...inc);
+  }
+
+  // Mark as seeded
+  db.prepare("INSERT OR IGNORE INTO seed_metadata (seed_key) VALUES ('mock_data_v1')").run();
+  console.log('[DB] Mock data seeded successfully!');
 }
 
 /**

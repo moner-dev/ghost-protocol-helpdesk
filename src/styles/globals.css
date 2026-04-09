@@ -1,0 +1,312 @@
+/**
+ * GHOST PROTOCOL — Global Styles
+ *
+ * This file contains the CSS reset, font imports, and base styles.
+ * Import variables.css before this file.
+ */
+
+/* ========================================
+   FONT IMPORTS
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ========================================
+   CSS RESET
+   ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-base);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   TOPOGRAPHIC BACKGROUND PATTERN
+   ======================================== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%231B2A6B' stroke-width='0.5'%3E%3Cpath d='M0 50 Q 50 30, 100 50 T 200 50'/%3E%3Cpath d='M0 70 Q 50 50, 100 70 T 200 70'/%3E%3Cpath d='M0 90 Q 50 110, 100 90 T 200 90'/%3E%3Cpath d='M0 110 Q 50 90, 100 110 T 200 110'/%3E%3Cpath d='M0 130 Q 50 150, 100 130 T 200 130'/%3E%3Cpath d='M0 150 Q 50 130, 100 150 T 200 150'/%3E%3Ccircle cx='30' cy='40' r='15'/%3E%3Ccircle cx='30' cy='40' r='25'/%3E%3Ccircle cx='170' cy='160' r='20'/%3E%3Ccircle cx='170' cy='160' r='30'/%3E%3Ccircle cx='100' cy='100' r='35'/%3E%3Ccircle cx='100' cy='100' r='45'/%3E%3Ccircle cx='100' cy='100' r='55'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+/* ========================================
+   BASE ELEMENT STYLES
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-base); }
+h6 { font-size: var(--text-sm); }
+
+p {
+  margin-bottom: var(--space-4);
+}
+
+a {
+  color: var(--color-navy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-navy-light);
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+/* ========================================
+   TEXT SELECTION
+   ======================================== */
+::selection {
+  background-color: var(--color-electric);
+  color: var(--color-base);
+}
+
+::-moz-selection {
+  background-color: var(--color-electric);
+  color: var(--color-base);
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border-radius: var(--radius-full);
+  opacity: 0.6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-light);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-navy) var(--color-surface);
+}
+
+/* ========================================
+   FOCUS STYLES
+   ======================================== */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-electric);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   ROOT CONTAINER
+   ======================================== */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   GLASS PANEL UTILITY
+   ======================================== */
+.glass-panel {
+  background: var(--color-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   PRIORITY ANIMATIONS
+   ======================================== */
+@keyframes pulse-critical {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--color-danger-glow);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 20px 4px var(--color-danger-glow);
+    opacity: 0.9;
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   FRAMELESS WINDOW DRAG REGION
+   ======================================== */
+.window-drag {
+  -webkit-app-region: drag;
+}
+
+.window-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* ========================================
+   DATE INPUT STYLING (GHOST PROTOCOL)
+   ======================================== */
+
+/* Force light color scheme for native date picker popup (white bg, dark text) */
+input[type="date"] {
+  color-scheme: light;
+}
+
+/* Calendar picker icon styling - white icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: brightness(0) invert(1);
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Date input text styling */
+input[type="date"]::-webkit-datetime-edit {
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  color: rgba(79, 195, 247, 0.4);
+  padding: 0 2px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field:focus,
+input[type="date"]::-webkit-datetime-edit-day-field:focus,
+input[type="date"]::-webkit-datetime-edit-year-field:focus {
+  background-color: rgba(79, 195, 247, 0.2);
+  color: #4FC3F7;
+  outline: none;
+}
+
+/* Placeholder styling when no date selected */
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: rgba(79, 195, 247, 0.4);
+}

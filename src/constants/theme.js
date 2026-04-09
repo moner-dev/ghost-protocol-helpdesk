@@ -1,0 +1,16 @@
+export const DARK_THEME = {
+  bg: '#050A18',
+  surface: '#0A1628',
+  border: 'rgba(79, 195, 247, 0.2)',
+  glow: 'rgba(79, 195, 247, 0.15)',
+  navy: '#1B2A6B',
+  electric: '#4FC3F7',
+  electric2: '#00E5FF',
+  gold: '#C9A84C',
+  danger: '#EF4444',
+  success: '#10B981',
+  warning: '#F59E0B',
+  text: 'rgba(255, 255, 255, 0.9)',
+  textMuted: 'rgba(79, 195, 247, 0.6)',
+  gridLine: 'rgba(79, 195, 247, 0.06)',
+};

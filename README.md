@@ -1,17 +1,237 @@
-# GHOST PROTOCOL
+<div align="center">
+  <img src="src/assets/ghost-protocol.ico" alt="Ghost Protocol Logo" width="120"/>
 
-**IT Intelligence Suite v1.0.0**
+  <h1>GHOST PROTOCOL</h1>
+  <h3><em>Enterprise-Grade Incident Management & Help Desk System for Windows</em></h3>
 
-Full-featured IT Helpdesk desktop application built with modern web technologies.
+  <br/>
 
-Built by **M. O. N. E. R** — Application Developer & AI Specialist
+  <img src="https://img.shields.io/badge/RELEASE-v1.0.0-00d4ff?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PLATFORM-Windows-0078d4?style=for-the-badge&logo=windows"/>
+  <img src="https://img.shields.io/badge/LICENSE-MIT-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/BUILT_WITH-Electron-47848f?style=for-the-badge&logo=electron"/>
+  <img src="https://img.shields.io/badge/REACT-18-61dafb?style=for-the-badge&logo=react"/>
+  <img src="https://img.shields.io/badge/STATUS-Active-brightgreen?style=for-the-badge"/>
+
+  <br/><br/>
+
+  <a href="#-features">Features</a> &nbsp;&bull;&nbsp;
+  <a href="#-screenshots">Screenshots</a> &nbsp;&bull;&nbsp;
+  <a href="#-download">Download</a> &nbsp;&bull;&nbsp;
+  <a href="#-installation">Installation</a> &nbsp;&bull;&nbsp;
+  <a href="#-roles--permissions">Roles</a> &nbsp;&bull;&nbsp;
+  <a href="#-building">Building</a>
+
+</div>
+
+<br/>
 
 ---
 
-## Tech Stack
+## Why Ghost Protocol?
+
+Managing IT incidents without the right tools leads to chaos — missed tickets, no accountability, zero visibility into operations. **Ghost Protocol** delivers a complete, offline-capable desktop command center for IT teams: from incident intake to resolution, knowledge sharing, comprehensive audit trails, and actionable analytics — all in one secure, self-contained application that runs entirely on your infrastructure.
+
+---
+
+## ✨ Features
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎫 Incident Management</h3>
+      <ul>
+        <li>Full CRUD with role-based access control</li>
+        <li>Status tracking: New, In Progress, Escalated, Resolved, Closed</li>
+        <li>Priority levels: Critical, High, Medium, Low</li>
+        <li>Department and assignee management</li>
+        <li>Bulk actions: Assign, Priority change, Delete</li>
+        <li>Smart deletion rules enforced per role</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📊 Operations Dashboard</h3>
+      <ul>
+        <li>Real-time incident metrics and KPIs</li>
+        <li>Department load visualization chart</li>
+        <li>Live activity feed with quick actions</li>
+        <li>Critical incident alerts</li>
+        <li>Today's resolution stats</li>
+        <li>Auto-refresh polling</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📚 Knowledge Base</h3>
+      <ul>
+        <li>Markdown article editor with preview</li>
+        <li>Category organization and filtering</li>
+        <li>Full-text search across articles</li>
+        <li>YES/NO feedback rating system</li>
+        <li>Report an Issue functionality</li>
+        <li>Real-time notifications bell</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>👥 User & Department Management</h3>
+      <ul>
+        <li>End user (reporter) directory</li>
+        <li>Ticket reassignment on user deletion</li>
+        <li>Company department organization</li>
+        <li>Incident reassignment protection</li>
+        <li>Capacity tracking per department</li>
+        <li>Active/Inactive status management</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🔒 Security & Audit</h3>
+      <ul>
+        <li>RBAC with 4 roles: Owner, Admin, Operator, Viewer</li>
+        <li>bcrypt password hashing</li>
+        <li>Session-based auth (auto-logout on close)</li>
+        <li>Complete audit log with filtering</li>
+        <li>User approval workflow</li>
+        <li>Role hierarchy enforcement</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📈 Reports & Analytics</h3>
+      <ul>
+        <li>Incidents by status, priority, department</li>
+        <li>Trend analysis over time</li>
+        <li>Resolution rate metrics</li>
+        <li>PDF report generation</li>
+        <li>Excel/CSV data export</li>
+        <li>Date range filtering</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>💾 Backup & Restore</h3>
+      <ul>
+        <li>One-click database backup (Owner only)</li>
+        <li>Restore from any backup point</li>
+        <li>Backup history management</li>
+        <li>JSON export for portability</li>
+        <li>Data stored in %APPDATA%</li>
+        <li>Survives app uninstall</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🎨 User Experience</h3>
+      <ul>
+        <li>Dark Intelligence Theater theme</li>
+        <li>Cinematic splash screen with skip</li>
+        <li>Smooth Framer Motion animations</li>
+        <li>Custom window controls</li>
+        <li>Responsive sidebar navigation</li>
+        <li>Context-aware help system</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+  <img src="screenshots/dashboard.png" alt="Operations Dashboard" width="45%"/>
+  &nbsp;&nbsp;
+  <img src="screenshots/incidents.png" alt="Incident Management" width="45%"/>
+
+  <br/><br/>
+
+  <img src="screenshots/knowledge-base.png" alt="Knowledge Base" width="45%"/>
+  &nbsp;&nbsp;
+  <img src="screenshots/reports.png" alt="Reports & Analytics" width="45%"/>
+
+  <br/><br/>
+
+  <img src="screenshots/users.png" alt="User Administration" width="45%"/>
+  &nbsp;&nbsp;
+  <img src="screenshots/audit-log.png" alt="Audit Log" width="45%"/>
+
+</div>
+
+<br/>
+
+> 📌 *Screenshots will be added in an upcoming release. Place your PNG files in the `screenshots/` folder.*
+
+---
+
+## 🎬 Demo Video
+
+<div align="center">
+
+> 🎥 *Full demo video coming soon — showcasing Ghost Protocol's complete workflow from incident intake to resolution.*
+
+<!-- VIDEO PLACEHOLDER -->
+<!-- Once ready, replace this block with: -->
+<!-- [![Watch Demo](screenshots/video-thumbnail.png)](https://youtube.com/your-link) -->
+
+</div>
+
+---
+
+## ⬇️ Download
+
+<div align="center">
+
+| Version | Release Date | Platform | Download |
+|:-------:|:------------:|:--------:|:--------:|
+| **v1.0.0** | April 2026 | Windows 10+ | [⬇️ GhostProtocol-1.0.0-Setup.exe](https://github.com/moneraldabai-ui/ghost-protocol/releases/tag/v1.0.0) |
+
+</div>
+
+---
+
+## 🔐 Roles & Permissions
+
+| Role | Access Level | Capabilities |
+|:-----|:-------------|:-------------|
+| 👑 **OWNER** | Full | Everything: Backup/Restore, Audit Log deletion, delete any ticket regardless of status |
+| 🛡️ **ADMIN** | High | Full management except Backup; cannot delete Closed/Resolved tickets |
+| ✏️ **OPERATOR** | Medium | Create and update tickets, manage end users |
+| 👁️ **VIEWER** | Read-only | View all data, no modifications allowed |
+
+---
+
+## 🔑 Default Credentials
+
+> ⚠️ **Security Notice:** Change default credentials immediately after first login in a production environment.
+
+| Role | Username | Password |
+|:----:|:--------:|:--------:|
+| 👑 **OWNER** | `pro` | `Ghost2026` |
+| 🛡️ **ADMIN** | `admin` | `Ghost2026` |
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+  <img src="https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react"/>
+  <img src="https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite"/>
+  <img src="https://img.shields.io/badge/Electron-Latest-47848f?style=flat-square&logo=electron"/>
+  <img src="https://img.shields.io/badge/SQLite-003b57?style=flat-square&logo=sqlite"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38bdf8?style=flat-square&logo=tailwindcss"/>
+  <img src="https://img.shields.io/badge/Framer_Motion-black?style=flat-square&logo=framer"/>
+  <img src="https://img.shields.io/badge/Zustand-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock"/>
+
+</div>
+
+<br/>
 
 | Category | Technologies |
-|----------|--------------|
+|:---------|:-------------|
 | **Frontend** | React 18, Vite, Tailwind CSS, Framer Motion, GSAP |
 | **Backend** | Electron, SQLite (better-sqlite3) |
 | **State** | Zustand, React Hooks |
@@ -19,46 +239,21 @@ Built by **M. O. N. E. R** — Application Developer & AI Specialist
 
 ---
 
-## Features
-
-- **Incident Management** — Full CRUD operations with status tracking, assignments, and resolution workflow
-- **Knowledge Base** — Article management with markdown editor, categories, and search
-- **End Users Management** — Track reporters with ticket reassignment on delete
-- **Company Departments** — Organize departments with incident reassignment protection
-- **User Administration** — RBAC with 4 roles: OWNER, ADMIN, OPERATOR, VIEWER
-- **Audit Log** — Full operation tracking for compliance and security
-- **Reports & Analytics** — Dashboard metrics with PDF/Excel export
-- **Backup & Restore** — Database backup system (OWNER only)
-- **KB Feedback System** — YES/NO rating + Report an Issue functionality
-- **Notifications** — Real-time KB feedback notifications bell
-- **Real-time Dashboard** — Department load chart and incident metrics
-
----
-
-## Default Credentials
-
-| Role | Username | Password |
-|------|----------|----------|
-| **OWNER** | `pro` | `Ghost2026` |
-| **ADMIN** | `admin` | `Ghost2026` |
-
----
-
-## System Requirements
+## 💻 System Requirements
 
 | Requirement | Specification |
-|-------------|---------------|
+|:------------|:--------------|
 | **OS** | Windows 10 or later |
-| **Resolution** | 1920x1080 recommended |
+| **Resolution** | 1920×1080 recommended |
 | **Display Scaling** | 100% |
 | **Disk Space** | ~200 MB |
 
 ---
 
-## Prerequisites (Development)
+## 🔧 Prerequisites (Development)
 
 | Tool | Version | Download |
-|------|---------|----------|
+|:-----|:--------|:---------|
 | **Node.js** | 18.x or later | https://nodejs.org/ |
 | **npm** | 9.x or later | Included with Node.js |
 | **Git** | Any recent version | https://git-scm.com/ |
@@ -69,7 +264,7 @@ Built by **M. O. N. E. R** — Application Developer & AI Specialist
 After installing Inno Setup, add it to your system PATH:
 
 1. Find your Inno Setup install folder (default: `C:\Program Files (x86)\Inno Setup 6`)
-2. Open **System Properties** > **Environment Variables**
+2. Open **System Properties** → **Environment Variables**
 3. Under **System variables**, select `Path` and click **Edit**
 4. Click **New** and add: `C:\Program Files (x86)\Inno Setup 6`
 5. Click **OK** and restart your terminal
@@ -81,12 +276,12 @@ iscc /?
 
 ---
 
-## Installation
+## 📦 Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/moneraldabai-ui/ghost-protocol.git
 cd ghost-protocol
 ```
 
@@ -98,7 +293,7 @@ npm install
 
 ---
 
-## Development
+## 🚀 Development
 
 ### Start with Electron (full app)
 
@@ -126,7 +321,7 @@ Builds the Vite bundle and runs it inside Electron without packaging.
 
 ---
 
-## Building
+## 🔨 Building
 
 ### Step 1: Build the Vite bundle
 
@@ -146,8 +341,8 @@ Runs `vite build` and then `electron-builder --win`. Output goes to:
 
 ```
 release/
-  win-unpacked/                    <- Portable app
-  GHOST PROTOCOL-1.0.0-Setup.exe   <- NSIS installer
+  win-unpacked/                    ← Portable app
+  GHOST PROTOCOL-1.0.0-Setup.exe   ← NSIS installer
 ```
 
 ### Step 3: Build the Inno Setup installer
@@ -170,14 +365,14 @@ release/
 npm run build:installer
 ```
 
-Runs all three steps in sequence: `vite build` > `electron-builder --win` > `iscc installer.iss`.
+Runs all three steps in sequence: `vite build` → `electron-builder --win` → `iscc installer.iss`.
 
 ---
 
-## NPM Scripts Reference
+## 📋 NPM Scripts Reference
 
 | Script | Command | Description |
-|--------|---------|-------------|
+|:-------|:--------|:------------|
 | `dev` | `vite` | Start Vite dev server (browser only) |
 | `build` | `vite build` | Build the React bundle to `dist/` |
 | `preview` | `vite preview` | Preview the built bundle in browser |
@@ -189,7 +384,7 @@ Runs all three steps in sequence: `vite build` > `electron-builder --win` > `isc
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 ghost-protocol/
@@ -212,6 +407,7 @@ ghost-protocol/
 │   ├── constants/            # Theme, options
 │   ├── styles/               # Global CSS, variables
 │   └── assets/               # Icons, images
+├── screenshots/              # Screenshot images for README
 ├── installer.iss             # Inno Setup installer script
 ├── electron-builder.config.cjs
 ├── vite.config.js
@@ -221,7 +417,7 @@ ghost-protocol/
 
 ---
 
-## Data Storage
+## 🗄️ Data Storage
 
 The SQLite database is created automatically on first launch at:
 
@@ -233,7 +429,7 @@ This directory is **not** included in the installer. Uninstalling the app does n
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 ### `iscc` is not recognized
 
@@ -263,8 +459,36 @@ The `markdown` and `index` chunks exceed 500 KB. This is expected due to the mar
 
 ---
 
-## License
+## 📋 Roadmap
 
-MIT License - See [LICENSE](LICENSE)
+- [x] v1.0.0 — Initial public release
+- [ ] bcrypt full migration (replace simpleHash fallback)
+- [ ] Check for Updates — GitHub Releases API integration
+- [ ] Demo video & marketing materials
+- [ ] v1.1.0 — Enhanced reporting & analytics
+- [ ] Email notifications integration
+- [ ] Multi-language support
+
+---
+
+## 📄 License
+
+MIT License — See [LICENSE](LICENSE)
 
 Copyright (c) 2026 M. O. N. E. R
+
+---
+
+<div align="center">
+
+  <h3>👻 Ghost Protocol</h3>
+
+  Built with ❤️ by <strong>M · O · N · E · R</strong><br/>
+  <em>Application Developer & AI Specialist</em>
+
+  <br/><br/>
+
+  <img src="https://img.shields.io/badge/Made_with-Electron-47848f?style=for-the-badge&logo=electron"/>
+  <img src="https://img.shields.io/badge/©_2026-M.O.N.E.R-00d4ff?style=for-the-badge"/>
+
+</div>

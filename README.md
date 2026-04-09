@@ -19,9 +19,8 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/github/downloads/moneraldabai-ui/ghost-protocol-helpdesk/total?style=for-the-badge&label=TOTAL+DOWNLOADS&color=ff6b35&logo=github"/>
 
-<br/><br/>
+
 
 <a href="https://github.com/moneraldabai-ui/ghost-protocol-helpdesk/releases/download/v1.0.0/GhostProtocol-1.0.0-Setup.exe">
   <img src="https://img.shields.io/badge/⬇️_Download_Installer-GhostProtocol--1.0.0--Setup.exe-00d4ff?style=for-the-badge&logo=windows&logoColor=white" alt="Download Installer"/>
@@ -33,6 +32,7 @@
   <img src="https://img.shields.io/badge/📦_Download_Source-ZIP-6e40c9?style=for-the-badge&logo=github&logoColor=white" alt="Download ZIP"/>
 </a>
 
+<img src="https://img.shields.io/github/downloads/moneraldabai-ui/ghost-protocol-helpdesk/total?style=for-the-badge&label=TOTAL+DOWNLOADS&color=ff6b35&logo=github"/>
 <br/><br/>
 
 | | File | Description |

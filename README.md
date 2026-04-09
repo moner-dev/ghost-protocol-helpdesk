@@ -21,13 +21,13 @@
 
 <br/>
 
-<a href="https://github.com/moneraldabai-ui/ghost-protocol/releases/download/v1.0.0/GhostProtocol-1.0.0-Setup.exe">
+<a href="https://github.com/moneraldabai-ui/ghost-protocol-helpdesk/releases/download/v1.0.0/GhostProtocol-1.0.0-Setup.exe">
   <img src="https://img.shields.io/badge/⬇️_Download_Installer-GhostProtocol--1.0.0--Setup.exe-00d4ff?style=for-the-badge&logo=windows&logoColor=white" alt="Download Installer"/>
 </a>
 
 &nbsp;&nbsp;&nbsp;
 
-<a href="https://github.com/moneraldabai-ui/ghost-protocol/archive/refs/heads/main.zip">
+<a href="https://github.com/moneraldabai-ui/ghost-protocol-helpdesk/archive/refs/heads/main.zip">
   <img src="https://img.shields.io/badge/📦_Download_Source-ZIP-6e40c9?style=for-the-badge&logo=github&logoColor=white" alt="Download ZIP"/>
 </a>
 
@@ -339,8 +339,8 @@ iscc /?
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/moneraldabai-ui/ghost-protocol.git
-cd ghost-protocol
+git clone https://github.com/moneraldabai-ui/ghost-protocol-helpdesk.git
+cd ghost-protocol-helpdesk
 ```
 
 ### 2. Install dependencies

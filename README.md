@@ -12,7 +12,6 @@
   <img src="https://img.shields.io/badge/BUILT_WITH-Electron-47848f?style=for-the-badge&logo=electron"/>
   <img src="https://img.shields.io/badge/REACT-18-61dafb?style=for-the-badge&logo=react"/>
   <img src="https://img.shields.io/badge/STATUS-Active-brightgreen?style=for-the-badge"/>
-  <img src="https://img.shields.io/github/downloads/moneraldabai-ui/ghost-protocol-helpdesk/total?style=for-the-badge&label=DOWNLOADS&color=ff6b35&logo=github" alt="Total Downloads"/>
 
   <br/><br/>
   

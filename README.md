@@ -1,7 +1,7 @@
 <div align="center">
   <img src="src/assets/ghost-protocol.ico" alt="Ghost Protocol Logo" width="120"/>
 
-  <h1>GHOST PROTOCOL Helpdesk</h1>
+  <h1>GHOST PROTOCOL HELPDESK</h1>
   <h3><em>Enterprise-Grade Incident Management & Help Desk System for Windows</em></h3>
 
   <br/>
